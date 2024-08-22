@@ -1,0 +1,17 @@
+<table>
+  <tr *ngFor="let row of board; let i = index">
+    <td *ngFor="let cell of row; let j = index">
+      <app-game-board-cell (cellSelected)="onCellSelected(i, j)"
+                           player="{{cell.player}}"></app-game-board-cell>
+    </td>
+  </tr>
+</table>
+<ng-container *ngIf="winner else noWinner">
+  <div>
+    <label>Winner: {{player}}</label>
+  </div>
+  <button (click)="reset()">Reset</button>
+</ng-container>
+<ng-template #noWinner>
+  <label>Player: {{player}}</label>
+</ng-template>

@@ -1,0 +1,4 @@
+<div (click)="cellSelected.emit()" style="width: 100%; height: 100%;"
+     [ngStyle]="{'background-color': player === '' ? '' : (player === 'A' ? 'yellow' : 'red')}">
+{{player}}
+</div>
